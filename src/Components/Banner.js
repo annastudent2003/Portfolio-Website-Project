@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from '../assets/headerImg.png';
+import headerImg from "../assets/img/headerImg.png";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import TrackVisibility from "react-on-screen";
 import "../App.css";
@@ -10,63 +10,40 @@ export const Banner = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
+  const period = 2000;
 
   const toRotate = useMemo(() => ["Web Developer", "Data Analyst", "UI/UX Designer"], []);
 
-  const period = 2000;
+  useEffect(() => {
+    const tick = () => {
+      const i = loopNum % toRotate.length;
+      const fullText = toRotate[i];
+      const updatedText = isDeleting
+        ? fullText.substring(0, text.length - 1)
+        : fullText.substring(0, text.length + 1);
 
-useEffect(() => {
-  const tick = () => {
-    const i = loopNum % toRotate.length;
-    const fullText = toRotate[i];
-    const updatedText = isDeleting
-      ? fullText.substring(0, text.length - 1)
-      : fullText.substring(0, text.length + 1);
+      setText(updatedText);
 
-    setText(updatedText);
+      if (isDeleting) {
+        setDelta((prevDelta) => prevDelta / 2);
+      }
 
-    if (isDeleting) {
-      setDelta((prevDelta) => prevDelta / 2);
-    }
+      if (!isDeleting && updatedText === fullText) {
+        setIsDeleting(true);
+        setDelta(period);
+      } else if (isDeleting && updatedText === "") {
+        setIsDeleting(false);
+        setLoopNum((prevLoopNum) => prevLoopNum + 1);
+        setDelta(500);
+      }
+    };
 
-    if (!isDeleting && updatedText === fullText) {
-      setIsDeleting(true);
-      setDelta(period);
-    } else if (isDeleting && updatedText === "") {
-      setIsDeleting(false);
-      setLoopNum((prevLoopNum) => prevLoopNum + 1);
-      setDelta(500);
-    }
-  };
+    const ticker = setInterval(() => {
+      tick(); // ✅ Prevent "unused var" ESLint error
+    }, delta);
 
-  const ticker = setInterval(tick, delta);
-
-  return () => clearInterval(ticker);
-}, [text, delta, isDeleting, loopNum, toRotate, period]);
-
-
-  const tick = () => {
-    const i = loopNum % toRotate.length;
-    const fullText = toRotate[i];
-    const updatedText = isDeleting
-      ? fullText.substring(0, text.length - 1)
-      : fullText.substring(0, text.length + 1);
-
-    setText(updatedText);
-
-    if (isDeleting) {
-      setDelta((prevDelta) => prevDelta / 2);
-    }
-
-    if (!isDeleting && updatedText === fullText) {
-      setIsDeleting(true);
-      setDelta(period);
-    } else if (isDeleting && updatedText === "") {
-      setIsDeleting(false);
-      setLoopNum((prevLoopNum) => prevLoopNum + 1); // ✅ functional update
-      setDelta(500);
-    }
-  };
+    return () => clearInterval(ticker);
+  }, [text, delta, isDeleting, loopNum, toRotate, period]);
 
   return (
     <section className="banner" id="home">
@@ -84,8 +61,9 @@ useEffect(() => {
                     </span>
                   </h1>
                   <p>
-                    B.Tech CSE student proficient in web development, with strong skills in frontend and currently
-                    learning backend. Experienced in data analytics and databases, with foundational knowledge in AI/ML.
+                    B.Tech CSE student proficient in web development with frontend focus,
+                    learning backend. Experienced in data analytics and databases, and building
+                    a strong base in AI/ML.
                   </p>
                   <button onClick={() => console.log("connect")}>
                     Let’s Connect <ArrowRightCircle size={25} />
@@ -108,3 +86,4 @@ useEffect(() => {
     </section>
   );
 };
+
