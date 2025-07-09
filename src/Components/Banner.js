@@ -33,7 +33,7 @@ useEffect(() => {
       setDelta(period);
     } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
-      setLoopNum((prev) => prev + 1);
+      setLoopNum((prevLoopNum) => prevLoopNum + 1);
       setDelta(500);
     }
   };
@@ -43,8 +43,7 @@ useEffect(() => {
   }, delta);
 
   return () => clearInterval(ticker);
-}, [text, delta]);
-
+}, [text, delta, isDeleting, loopNum, toRotate, period]);
 
   const tick = () => {
     const i = loopNum % toRotate.length;
