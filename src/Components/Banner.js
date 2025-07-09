@@ -11,7 +11,8 @@ export const Banner = () => {
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
 
-  const toRotate = ["Web Developer", "Data Analyst", "UI/UX Designer"];
+  const toRotate = useMemo(() => ["Web Developer", "Data Analyst", "UI/UX Designer"], []);
+
   const period = 2000;
 
 useEffect(() => {
@@ -38,12 +39,11 @@ useEffect(() => {
     }
   };
 
-  const ticker = setInterval(() => {
-    tick();
-  }, delta);
+  const ticker = setInterval(tick, delta);
 
   return () => clearInterval(ticker);
 }, [text, delta, isDeleting, loopNum, toRotate, period]);
+
 
   const tick = () => {
     const i = loopNum % toRotate.length;
