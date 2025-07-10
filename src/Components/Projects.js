@@ -7,7 +7,7 @@ import projectImg4 from "../assets/project4.png";
 import projectImg5 from "../assets/project5.png";
 import projectImg6 from "../assets/project6.png";
 import projectImg7 from "../assets/project7.png";
-import projectImg8 from "../assets/project8.png";
+import projectImg9 from "../assets/page3.png";
 import '../App.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -62,10 +62,10 @@ export const Projects = () => {
       url: "https://684ce2f9b24b59d2c6aa61ae--verdant-smakager-89b757.netlify.app/",
     },
     {
-      title: "Portfolio (React)",
-      description: "Used: CSS,ReactJS, Bootstrap.",
-      imgUrl: projectImg8,
-      url: "https://github.com/annastudent2003/Portfolio-Website-Project",
+      title: "StudySync - Study Planner App",
+      description: "Used: React.js, CSS,API, HTML, JavaScript, Bootstrap.",
+      imgUrl: projectImg9,
+      url: "https://studysyncplanner.netlify.app/",
     },
   ];
 
