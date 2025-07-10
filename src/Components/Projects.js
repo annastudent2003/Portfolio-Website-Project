@@ -8,9 +8,10 @@ import projectImg5 from "../assets/project5.png";
 import projectImg6 from "../assets/project6.png";
 import projectImg7 from "../assets/project7.png";
 import projectImg8 from "../assets/project8.png";
-import projectImg9 from "../assets/web dev.png";
-import projectImg10 from "../assets/Dashboard using Tablaeu-2.JPG";
-import projectImg11 from "../assets/Power Bi Dashboard_page-0001.jpegfile";
+import projectImg9 from "../assets/page3.png";
+import projectImg10 from "../assets/web dev.png";
+import projectImg11 from "../assets/Dashboard using Tablaeu-2.jpg";
+import projectImg12 from "../assets/Power Bi Dashboard_page-0001.jpg";
 import '../App.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -69,6 +70,24 @@ export const Projects = () => {
       description: "Used: React.js, CSS,API, HTML, JavaScript, Bootstrap.",
       imgUrl: projectImg9,
       url: "https://studysyncplanner.netlify.app/",
+    },
+     {
+      title: "Portfolio",
+      description: "Used: React.js, Bootstrap, HTML, CSS & JavaScript.",
+      imgUrl: projectImg10,
+      url: "https://github.com/annastudent2003/Portfolio-Website-Project",
+    },
+      {
+      title: "Sales Insights - Data Analytics",
+      description: "Used: MySQL, Tableau.",
+      imgUrl: projectImg11,
+      url: "https://github.com/annastudent2003/Sales-Insights",
+    },
+       {
+      title: "Business analysis - Data Analytics",
+      description: "Used: SQL, Python, Power Bi.",
+      imgUrl: projectImg12,
+      url: "https://github.com/annastudent2003/Business-Analysis",
     },
   ];
 
