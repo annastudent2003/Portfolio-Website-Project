@@ -7,7 +7,10 @@ import projectImg4 from "../assets/project4.png";
 import projectImg5 from "../assets/project5.png";
 import projectImg6 from "../assets/project6.png";
 import projectImg7 from "../assets/project7.png";
-import projectImg9 from "../assets/page3.png";
+import projectImg8 from "../assets/project8.png";
+import projectImg9 from "../assets/web dev.png";
+import projectImg10 from "../assets/Dashboard using Tablaeu-2.JPG";
+import projectImg11 from "../assets/Power Bi Dashboard_page-0001.jpegfile";
 import '../App.css';
 import TrackVisibility from 'react-on-screen';
 
