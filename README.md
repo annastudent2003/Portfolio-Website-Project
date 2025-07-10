@@ -2,7 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Link: https://ananyasaikiapersonalortfolio.netlify.app/
+Portfolio Link: https://ananyasaikiapersonalortfolio.netlify.app/
+USED: React.js, CSS, JSX (HTML), Bootstrap, JavaScript.
 
 # Personal Portfolio
 
