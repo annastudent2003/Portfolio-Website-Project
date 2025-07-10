@@ -66,7 +66,7 @@ export const Skills = () => {
                     <li>SQL, MySQL</li>
                     <li>Java</li>
                     <li>Git & GitHub</li>
-                    <li>Restful APIs</li>
+                    <li>Restful APIs, Bootstrap</li>
                     <li>Python</li>
                     <li>C programming</li>
                   </ul>
